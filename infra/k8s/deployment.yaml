@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cretor-coll-ee7edf8db623496693e4fc72cb8b2dd8-depl
+  labels:
+    app: cretor-coll-ee7edf8db623496693e4fc72cb8b2dd8
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cretor-coll-ee7edf8db623496693e4fc72cb8b2dd8
+  template:
+    metadata:
+      labels:
+        app: cretor-coll-ee7edf8db623496693e4fc72cb8b2dd8
+    spec:
+      containers:
+        - name: cretor-coll-ee7edf8db623496693e4fc72cb8b2dd8
+          image: 216084506783.dkr.ecr.ap-south-1.amazonaws.com/backstract_apps:cretor-coll-ee7edf8db623496693e4fc72cb8b2dd8
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9025
